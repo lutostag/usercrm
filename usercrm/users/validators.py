@@ -19,7 +19,7 @@ def validate_address(address):
             'Address is too long, please limit to 255 characters')
     parsed = {item[1]: item[0] for item in parse_address(default_expansion)}
     known_keys = parsed.keys()
-    if not known_keys >= REQUIRED_ADDRESS_FIELDS:
+    if len(REQUIRED_ADDRESS_FIELDS - known_keys) > 0:
         raise ValidationError('Address does not have valid entries for: ' +
                               ', '.join(REQUIRED_ADDRESS_FIELDS - known_keys))
 
