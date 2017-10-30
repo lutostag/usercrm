@@ -11,7 +11,7 @@ make deps
 
 ## To run
 ```
-python3 manage.py migrations
+python3 manage.py migrate
 python3 manage.py createsuperuser
 python3 usercrm/manage.py runserver
 ```
